@@ -1,5 +1,6 @@
 import random
 import time
+import datetime
 
 print('\n로또번호 생성기 입니다\n')
 limitcycle = input("몇회 실행 할까요? ")
@@ -20,7 +21,7 @@ while lotto_cycle < int(limitcycle): #n번 반복 엑셀은 1048576줄 까지 �
   joined_string = ",".join(converted_list)
   f = open('%s.txt' % filename , 'a') # W : 새로 쓴다, a : 추가한다. 추가를 해야 누적된다.
   f.write(joined_string)
-  f.write('\n') #줄바꿈을 한다 연속으로 쓰려면 줄바꾸면 안된다.
+  #f.write('\n') #줄바꿈을 한다 연속으로 쓰려면 줄바꾸면 안된다.
   f.close()
   lotto_cycle = lotto_cycle + 1
 #  print(joined_string)
@@ -29,7 +30,10 @@ while lotto_cycle < int(limitcycle): #n번 반복 엑셀은 1048576줄 까지 �
 stop_time = time.time()
 total_time = stop_time - start_time
 
-print(lotto_cycle, '번 완료했습니다.')
-print('총 소요시간은', float(total_time),"초 입니다.")
+result = datetime.timedelta(seconds=total_time) #0:00:00초 형태로 표시
+
+print('총', lotto_cycle, '번 완료했습니다.')
+#print('총 소요시간은', float(result),"입니다.")
+print('총 소요시간은', result,"입니다.")
 
 exit()
