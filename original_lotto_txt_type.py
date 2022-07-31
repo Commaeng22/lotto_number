@@ -24,7 +24,7 @@ while lotto_cycle < int(limitcycle): #n번 반복 엑셀은 1048576줄 까지 �
   f.close()
   lotto_cycle = lotto_cycle + 1
 #  print(joined_string)
-  print(lotto_cycle,'회 실행중 입니다.') #몇회 돌았는지 보여주기
+  print('총',limitcycle,'회중',lotto_cycle,'회 실행중 입니다.') #몇회 돌았는지 보여주기
 
 stop_time = time.time()
 total_time = stop_time - start_time
